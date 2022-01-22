@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<string.h>
+#include<windows.h>
+int main()
+{
+	char arr1[] = "happy every day";
+	char arr2[] = "***************";
+	int zuo = 0;
+	int you = strlen(arr1) - 1;//strlen计算元素个数
+	while (zuo <= you)
+	{
+		printf("%s", arr2);
+		arr2[zuo] = arr1[zuo];
+		zuo++;
+		Sleep(1000);//停留1秒
+		system("cls");//执行系统命令（清空屏幕）
+	}
+	printf("%s", arr2);
+	return 0;
+}//单向走
+
+
+
+#include <stdio.h>
+#include<string.h>
+#include<windows.h>
+int main()
+{
+	char arr1[] = "happy every day";
+	char arr2[] = "***************";
+	int zuo = 0;
+	int you = strlen(arr1) - 1;//strlen计算元素个数
+	while (zuo <= you)
+	{
+		printf("%s", arr2);
+		arr2[zuo] = arr1[zuo];
+		arr2[you] = arr1[you];
+		zuo++;
+		you--;
+		Sleep(1000);//停留1秒
+		system("cls");//执行系统命令（清空屏幕）
+	}
+	printf("%s", arr2);
+	return 0;
+  //双向“奔赴”
