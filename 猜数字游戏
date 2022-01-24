@@ -11,9 +11,10 @@ void menu()
 void game()
 {
 	int a = 0;
+	int i = 0;
 	int guess;
-	a = rand()%100+1;
-	while (1)
+	a = rand()%100+1;//生成1到100的随机数
+	for(i=0;i<=5;i++)//只能猜5次
 	{
 		printf("输入你猜的数:");
 		scanf("%d", &guess);
@@ -23,15 +24,17 @@ void game()
 			printf("猜小了\n");
 		else
 		{
-			printf("猜对了，你真厉害ヾ(๑╹◡╹)ﾉ”\n");
+			printf("猜对了，你真厉害Ｏ(≧▽≦)Ｏ\n");
 			break;
 		}
 	}
+	if (i > 5)
+		printf("次数用尽，失败(╯﹏╰)b\n");
 }
 int main()
 {
 	int b = 0;
-	srand((unsigned int)time(NULL));
+	srand((unsigned int)time(NULL));//根据时间戳生成随机数
 	do
 	{
 		menu();
